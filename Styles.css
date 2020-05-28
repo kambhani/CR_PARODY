@@ -9,6 +9,11 @@ h1 {
     font-size: 48px;
 }
 
+h2 {
+    color: black;
+    margin: 10px;
+}
+
 header {
     background-color: lightslategrey;
     margin-top: 0px;
@@ -19,7 +24,7 @@ header > nav {
     flex-wrap: wrap;
 }
 
-header > nav > a, footer > nav > a {
+header > nav > a {
     background-color: lightslategray;
     color: black;
     font-size: 20px;
@@ -34,7 +39,7 @@ header > nav > a, footer > nav > a {
     flex-wrap: wrap;
 }
 
-.card_display > div {
+.card_display > button {
     background-color: springgreen;
     font-size: 20px;
     text-align: center;
@@ -42,10 +47,10 @@ header > nav > a, footer > nav > a {
     padding: 10px;
     width: 200px;
     height: 200px;
-    line-height: 380px;
+    line-height: 320px;
 }
 
-.card_display > div > a {
+.card_display > button > a {
     color: black;
 }
 
@@ -73,4 +78,18 @@ footer > p {
     margin: 20px;
     text-align: center;
     color: whitesmoke;
+}
+
+li {
+    color: black;
+    margin-left: 10px;
+    margin-right: 50px;
+    text-align: justify;
+}
+
+p {
+    margin-left: 30px;
+    margin-right: 50px;
+    color: black;
+    text-align: justify;
 }
