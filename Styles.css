@@ -1,0 +1,76 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    background-color: beige;
+    font-size: 48px;
+}
+
+header {
+    background-color: lightslategrey;
+    margin-top: 0px;
+}
+
+header > nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header > nav > a, footer > nav > a {
+    background-color: lightslategray;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.card_display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_display > div {
+    background-color: springgreen;
+    font-size: 20px;
+    text-align: center;
+    margin: 30px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    line-height: 380px;
+}
+
+.card_display > div > a {
+    color: black;
+}
+
+footer {
+    background-color: black;
+    margin-top: 0px;
+}
+
+footer > nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer > nav > a {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+footer > p {
+    margin: 20px;
+    text-align: center;
+    color: whitesmoke;
+}
