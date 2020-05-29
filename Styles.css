@@ -2,11 +2,38 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@media (min-width: 600px) {
+    h1 {
+        font-size: 48px;
+    }
+}
+@media (max-width: 599px) {
+    .caption {
+        display: none;
+    }
+    h1 {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 500px) {
+    .card_display > div > a > img {
+        width: 194px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 499px) {
+    .card_display > div > a > img {
+        width: 97px;
+        height: 120px;
+    }
+}
+
 h1 {
     color: black;
     text-align: center;
     background-color: beige;
-    font-size: 48px;
 }
 
 h2 {
@@ -52,10 +79,8 @@ header > nav > a {
     position: relative;
     text-align: center;
     color: black;
-    margin: 30px;
+    margin: 10px;
     padding: 0px;
-    width: 194px;
-    height: 240px;
 }
 
 .card_display > div > a {
@@ -63,8 +88,7 @@ header > nav > a {
 }
 
 .card_display > div > a > img {
-    width: 194px;
-    height: 240px;
+    
 }
 
 footer {
