@@ -34,24 +34,37 @@ header > nav > a {
     padding-top: 5px;
 }
 
+.caption {
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .card_display {
     display: flex;
     flex-wrap: wrap;
 }
 
-.card_display > button {
-    background-color: springgreen;
-    font-size: 20px;
+.card_display > div {
+    position: relative;
     text-align: center;
+    color: black;
     margin: 30px;
-    padding: 10px;
-    width: 200px;
-    height: 200px;
-    line-height: 320px;
+    padding: 0px;
+    width: 194px;
+    height: 240px;
 }
 
-.card_display > button > a {
+.card_display > div > a {
     color: black;
+}
+
+.card_display > div > a > img {
+    width: 194px;
+    height: 240px;
 }
 
 footer {
