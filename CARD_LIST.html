@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About</title>
+        <title>Card List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"; href="Styles.css">
     </head>
@@ -11,21 +11,54 @@
             <nav>
                 <a href="HOME_PAGE.html">HOME</a>
                 <a href="CARD_LIST.html">CARD LIST</a>
-                <a href="HOME_PAGE.html">CR TOXICITY</a>
+                <a href="CR_TOXICITY.html">CR TOXICITY</a>
                 <a href="GUIDES.html">GUIDES</a>
             </nav>
         </header>
         <h2>Card List</h2>
-        <p>
-            [INSERT CARD LIST HERE]
-        </p>
+        <table id="cardList">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Card Name</th>
+                    <th onclick="sortTable(1)">Rarity</th>
+                    <th onclick="sortTable(2)">Elixir Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="MIRROR.html">Mirror</a></td>
+                    <td>Epic</td>
+                    <td>?</td>
+                </tr>
+                <tr>
+                    <td><a href="HEAL_SPIRIT.html">Heal Spirit</a></td>
+                    <td>Rare</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="ICE_SPIRIT.html">Ice Spirit</a></td>
+                    <td>Common</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="SKELETONS.html">Skeletons</a></td>
+                    <td>Common</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><a href="BARBARIAN_BARREL.html">Barbarian Barrel</a></td>
+                    <td>Epic</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
         <footer>
             <nav>
                 <a href="ABOUT_PAGE.html">ABOUT</a>
                 <a href="TOS_PAGE.html">TERMS OF USE</a>
                 <a href="PRIVACY_POLICY.html">PRIVACY POLICY</a>
                 <a href="DISCLAIMER.html">DISCLAIMER</a>
-                <a href="HOME_PAGE.html">GUIDES</a>
+                <a href="https://docs.google.com/forms/d/1aM9lBmHJR661K2CWiH2t_uObXKWiAeRoMPAkpAEZlzA/">FEEDBACK</a>
             </nav>
             <p>
                 This material is unofficial and is not endorsed by Supercell. 
@@ -33,5 +66,34 @@
                 <a href="https://www.supercell.com/fan-content-policy">https://www.supercell.com/fan-content-policy</a>
             </p>
         </footer>
+
+        <script>
+            var directions = [1, 1, 1];
+            function sortTable(n) {
+                directions[n] = (directions[n] + 1) % 2;
+                var table = document.getElementById("cardList");
+                var newTable;
+                var rows = table.rows;
+                var dir = directions[n];
+                for (var i = 1; i < rows.length - 1; i++) {
+                    var toAddIndex = i;
+                    var toAdd = rows[i].getElementsByTagName("TD")[n].innerHTML.toLowerCase();
+                    for (var j = i + 1; j < rows.length; j++) {
+                        var toCheck = rows[j].getElementsByTagName("TD")[n].innerHTML.toLowerCase();
+                        if (dir === 0 && toCheck < toAdd) {
+                            toAddIndex = j;
+                            toAdd = toCheck;
+                        } else if (dir === 1 && toCheck > toAdd) {
+                            toAddIndex = j;
+                            toAdd = toCheck;
+                        }
+                    }
+                    if (i !== toAddIndex) {
+                        rows[i].parentNode.insertBefore(rows[toAddIndex], rows[i]);
+                        rows[i + 1].parentNode.insertBefore(rows[i + 1], rows[toAddIndex + 1]);
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
