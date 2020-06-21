@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Deck Guides</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"; href="Styles.css">
+    </head>
+    <body>
+        <h1 style="margin-top: 0px; margin-bottom: 0px;">CLASH ROYALE: EVERYTHING IS OP/UP</h1>
+        <header>
+            <nav>
+                <a href="HOME_PAGE.html">HOME</a>
+                <a href="CARD_LIST.html">CARD LIST</a>
+                <a href="CR_TOXICITY.html">CR TOXICITY</a>
+                <a href="GUIDES.html">GUIDES</a>
+            </nav>
+        </header>
+        <h2>Deck Guides</h2>
+        <table id="deckList">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Deck Name</th>
+                    <th onclick="sortTable(1)">Deck Type</th>
+                    <th onclick="sortTable(2)">Average Elixir Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="HOME_PAGE.html">Classic Log Bait</a></td>
+                    <td>Bait</td>
+                    <td>3.3</td>
+                </tr>
+                <tr>
+                    <td><a href="HOME_PAGE.html">2.9 X-Bow Cycle</a></td>
+                    <td>Siege</td>
+                    <td>2.9</td>
+                </tr>
+                <tr>
+                    <td><a href="HOME_PAGE.html">2.6 Hog Cycle</a></td>
+                    <td>Cycle</td>
+                    <td>2.6</td>
+                </tr>
+            </tbody>
+        </table>
+        <footer>
+            <nav>
+                <a href="ABOUT_PAGE.html">ABOUT</a>
+                <a href="TOS_PAGE.html">TERMS OF USE</a>
+                <a href="PRIVACY_POLICY.html">PRIVACY POLICY</a>
+                <a href="DISCLAIMER.html">DISCLAIMER</a>
+                <a href="https://docs.google.com/forms/d/1aM9lBmHJR661K2CWiH2t_uObXKWiAeRoMPAkpAEZlzA/">FEEDBACK</a>
+            </nav>
+            <p>
+                This material is unofficial and is not endorsed by Supercell. 
+                For more information see Supercell's Fan Content Policy: 
+                <a href="https://www.supercell.com/fan-content-policy">https://www.supercell.com/fan-content-policy</a>
+            </p>
+        </footer>
+
+        <script>
+            var directions = [1, 1, 1];
+            function sortTable(n) {
+                directions[n] = (directions[n] + 1) % 2;
+                var table = document.getElementById("deckList");
+                var newTable;
+                var rows = table.rows;
+                var dir = directions[n];
+                for (var i = 1; i < rows.length - 1; i++) {
+                    var toAddIndex = i;
+                    var toAdd = rows[i].getElementsByTagName("TD")[n].innerHTML.toLowerCase();
+                    for (var j = i + 1; j < rows.length; j++) {
+                        var toCheck = rows[j].getElementsByTagName("TD")[n].innerHTML.toLowerCase();
+                        if (dir === 0 && toCheck < toAdd) {
+                            toAddIndex = j;
+                            toAdd = toCheck;
+                        } else if (dir === 1 && toCheck > toAdd) {
+                            toAddIndex = j;
+                            toAdd = toCheck;
+                        }
+                    }
+                    if (i !== toAddIndex) {
+                        rows[i].parentNode.insertBefore(rows[toAddIndex], rows[i]);
+                        rows[i + 1].parentNode.insertBefore(rows[i + 1], rows[toAddIndex + 1]);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
